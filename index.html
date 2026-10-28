@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Virtual assistant portfolio showcasing administrative support, email outreach, social media content, and Canva design." />
+  <title>Jinky Buarao | Virtual Assistant Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #282b38;
+      --muted: #665f55;
+      --cream: #fff9d2;
+      --paper: #ffffff;
+      --accent: #8cc0eb;
+      --accent-dark: #3d83b7;
+      --sage: #bfddf0;
+      --line: #e7d7b8;
+      --shadow: 0 18px 50px rgba(40, 43, 56, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--cream); color: var(--ink);
+      font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; border-radius:6px; }
+    .nav-links a { transition: color .2s ease; }
+    .project:hover { transform: translateY(-3px); box-shadow: var(--shadow); transition: .2s ease; }
+    .project { transition: .2s ease; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px 0; }
+    .brand { font-weight:800; letter-spacing:-.04em; text-decoration:none; font-size:1.05rem; }
+    .brand span { color:var(--accent); }
+    .nav-links { display:flex; gap:22px; flex-wrap:wrap; }
+    .nav-links a { font-size:.92rem; text-decoration:none; color:var(--muted); }
+    .nav-links a:hover { color:var(--accent-dark); }
+    .hero { display:grid; grid-template-columns:1.2fr .8fr; gap:48px; align-items:center; padding:76px 0 88px; }
+    .eyebrow { color:var(--accent-dark); font-size:.78rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { font-family: "Manrope", sans-serif; font-size:clamp(2.8rem, 7vw, 5.4rem); line-height:.99; letter-spacing:-.07em; margin:18px 0 22px; max-width:760px; }
+    h1 em { color:var(--accent); font-style:normal; }
+    .lead { font-size:1.12rem; color:var(--muted); max-width:600px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--ink); border-radius:999px; padding:12px 20px; text-decoration:none; font-weight:700; font-size:.94rem; transition:.2s ease; }
+    .btn.primary { background:var(--ink); color:white; }
+    .btn.primary:hover { background:var(--accent-dark); border-color:var(--accent-dark); transform:translateY(-2px); }
+    .btn.secondary { border-color:var(--line); background:var(--paper); }
+    .btn.secondary:hover { border-color:var(--accent); }
+    .hero-card { background:var(--sage); border-radius:28px; padding:30px; min-height:350px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .profile-photo { width:100%; height:100%; min-height:390px; object-fit:cover; object-position:center 25%; display:block; border-radius:22px; }
+    .hero-photo-wrap { padding:12px; background:#ffffff; border:1px solid var(--line); border-radius:28px; box-shadow:var(--shadow); }
+    .hero-card:after { content:""; position:absolute; width:230px; height:230px; border:1px solid rgba(34,35,31,.18); border-radius:50%; right:-70px; top:-55px; }
+    .monogram { width:88px; height:88px; border-radius:50%; background:var(--paper); display:grid; place-items:center; font-family:Georgia,serif; font-size:2rem; color:var(--accent-dark); }
+    .hero-card h2 { font-family:Georgia,serif; font-weight:500; font-size:2rem; line-height:1.15; max-width:280px; margin:36px 0 10px; }
+    .hero-card p { margin:0; color:#665f55; }
+    section { padding:76px 0; }
+    .section-head { max-width:650px; margin-bottom:34px; }
+    h2.section-title { font-family: "Manrope", sans-serif; font-size:clamp(2rem, 4vw, 3.2rem); line-height:1.05; letter-spacing:-.055em; margin:10px 0 14px; }
+    .section-copy { color:var(--muted); margin:0; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; align-items:start; }
+    .note { background:var(--paper); padding:28px; border:1px solid var(--line); border-radius:20px; }
+    .note strong { display:block; font-size:1.1rem; margin-bottom:8px; }
+    .skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .chip { border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:8px 13px; color:#55564f; font-size:.9rem; }
+    .services { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .service { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:24px; min-height:205px; }
+    .num { color:var(--accent); font-weight:800; font-size:.82rem; letter-spacing:.1em; }
+    .service h3, .project h3 { font-family: "Manrope", sans-serif; margin:14px 0 8px; font-size:1.2rem; letter-spacing:-.025em; }
+    .service p, .project p { margin:0; color:var(--muted); font-size:.96rem; }
+    .projects { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .project { border-radius:22px; overflow:hidden; background:var(--paper); border:1px solid var(--line); }
+    .project-art { min-height:190px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; background:#bfddf0; }
+    .project:nth-child(2) .project-art { background:#ffebcc; }
+    .project:nth-child(3) .project-art { background:#bfddf0; }
+    .project:nth-child(4) .project-art { background:#ffebcc; }
+    .art-label { font-size:.75rem; text-transform:uppercase; letter-spacing:.14em; font-weight:800; }
+    .art-title { font-family:Georgia,serif; font-size:clamp(1.6rem,3vw,2.5rem); line-height:1.05; max-width:300px; }
+    .project-body { padding:22px 24px 26px; }
+    .project-link { display:inline-block; margin-top:10px; color:var(--accent-dark); font-weight:800; font-size:.9rem; text-decoration:none; }
+    .project-link:hover { text-decoration:underline; text-underline-offset:4px; }
+    .project-body .small { font-size:.82rem; color:var(--accent-dark); font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .process { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .step { border-top:2px solid var(--accent); padding-top:16px; }
+    .step h3 { margin:8px 0; }
+    .step p { color:var(--muted); font-size:.94rem; margin:0; }
+    .contact { background:var(--ink); color:#ffffff; border-radius:28px; padding:clamp(28px,6vw,60px); display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; }
+    .contact .eyebrow { color:#8cc0eb; }
+    .contact h2 { font-size:clamp(2.2rem,5vw,4rem); line-height:1; letter-spacing:-.06em; margin:12px 0; }
+    .contact p { color:#e0e6f0; max-width:560px; }
+    .contact .btn { background:#ffffff; color:var(--ink); border-color:#ffffff; white-space:nowrap; }
+    .contact-actions { display:flex; align-items:center; justify-content:flex-end; gap:16px; flex-wrap:wrap; }
+    .social-link { color:#ffffff; text-decoration:underline; text-underline-offset:4px; font-weight:700; }
+    .social-link:hover { color:#8cc0eb; }
+    footer { padding:28px 0 38px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.88rem; }
+    .placeholder { font-size:.8rem; color:var(--muted); }
+    @media (max-width: 800px) {
+      .hero, .about-grid { grid-template-columns:1fr; }
+      .hero { padding:52px 0 60px; gap:28px; }
+      .hero-card { min-height:280px; }
+      .profile-photo { min-height:340px; max-height:520px; }
+      .services { grid-template-columns:repeat(2,1fr); }
+      .process { grid-template-columns:repeat(2,1fr); }
+      .contact { grid-template-columns:1fr; }
+      .contact .btn { justify-self:start; }
+      .contact-actions { justify-content:flex-start; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width:min(100% - 28px, 1120px); }
+      .nav { align-items:flex-start; flex-direction:column; }
+      .nav-links { gap:14px; }
+      .services, .projects, .process { grid-template-columns:1fr; }
+      section { padding:54px 0; }
+      footer { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">JINKY<span>.</span> VA</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">What I Do</a>
+        <a href="#work">My Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Virtual Assistant · Marketing Support</div>
+        <h1>Helping busy business owners <em>work smarter.</em></h1>
+        <p class="lead">Hi, I'm Jinky — a detail-oriented Virtual Assistant with a background in banking, financial services, and BPO support. I help business owners stay organized through thoughtful admin support, email outreach, and social media content.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">Explore My Work ↗</a>
+          <a class="btn secondary" href="#contact">Let's Connect</a>
+        </div>
+      </div>
+      <aside class="hero-photo-wrap" aria-label="Portrait of Jinky Buarao">
+        <img class="profile-photo" src="assets/jinky-profile.jpeg" alt="Jinky Buarao, Virtual Assistant, wearing a mustard blazer" />
+      </aside>
+    </section>
+
+    <section id="about" style="background:#ffebcc;">
+      <div class="wrap about-grid">
+        <div class="section-head">
+          <div class="eyebrow">A little about me</div>
+          <h2 class="section-title">Your extra set of hands behind the scenes.</h2>
+        </div>
+        <div>
+          <p class="section-copy">I enjoy helping businesses stay organized and show up consistently online. My experience in banking and financial services, along with BPO experience supporting U.S. clients, has helped me value clear communication, accuracy, and professionalism.</p>
+          <p class="section-copy" style="margin-top:16px;">I also enjoy designing content and finding simple ways to communicate a business's message. I'm continuously learning new tools and workflows so I can provide dependable support and help business owners focus on their priorities.</p>
+          <div class="skills">
+            <span class="chip">Email Outreach</span><span class="chip">Lead Research</span>
+            <span class="chip">Social Media Content</span><span class="chip">Canva Design</span>
+            <span class="chip">Data Entry</span><span class="chip">Admin Support</span>
+            <span class="chip">Customer Communication</span><span class="chip">Organization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">How I can help</div>
+          <h2 class="section-title">Practical support for your everyday business.</h2>
+          <p class="section-copy">Services can be tailored to your workflow, priorities, and goals.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="num">01 / ADMIN</div><h3>Administrative Support</h3><p>Data entry, document organization, task tracking, and keeping routine work organized.</p></article>
+          <article class="service"><div class="num">02 / EMAIL</div><h3>Email Outreach & Research</h3><p>Prospect research, contact-list organization, personalized email drafts, and follow-up tracking.</p></article>
+          <article class="service"><div class="num">03 / SOCIAL</div><h3>Social Media Support</h3><p>Content planning, caption writing, post scheduling support, and basic engagement tracking.</p></article>
+          <article class="service"><div class="num">04 / DESIGN</div><h3>Canva Graphics</h3><p>Simple branded graphics, quote posts, educational carousels, and promotional designs.</p></article>
+          <article class="service"><div class="num">05 / ORGANIZE</div><h3>Lead & Task Tracking</h3><p>Clear spreadsheets to track prospects, outreach status, follow-ups, and weekly priorities.</p></article>
+          <article class="service"><div class="num">06 / SUPPORT</div><h3>Customer Communication</h3><p>Professional written communication and organized handoffs, following client-approved processes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" style="background:#ffebcc;">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Selected work</div>
+          <h2 class="section-title">A few ways I can support a brand.</h2>
+          <p class="section-copy">Replace these sample cards with screenshots or links to your real Canva designs, captions, spreadsheets, and other work.</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-art"><div class="art-label">Social Media · Educational</div><div class="art-title">Helpful content that builds trust.</div></div>
+            <div class="project-body"><div class="small">Project 01</div><h3>Educational Social Posts</h3><p>Short, easy-to-understand captions and graphics designed to answer common audience questions.</p><p class="placeholder" style="margin-top:12px;">Replace this with your real project link.</p><a class="project-link" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">View sample project ↗</a></div>
+          </article>
+          <article class="project">
+            <div class="project-art"><div class="art-label">Email Marketing · Research</div><div class="art-title">Outreach with a personal touch.</div></div>
+            <div class="project-body"><div class="small">Project 02</div><h3>Prospect Research & Email Drafts</h3><p>A simple workflow for researching relevant businesses, personalizing outreach, and tracking follow-ups.</p><p class="placeholder" style="margin-top:12px;">Replace this with a sanitized sample tracker or email draft.</p><a class="project-link" href="https://docs.google.com/spreadsheets/" target="_blank" rel="noopener noreferrer">View sample tracker ↗</a></div>
+          </article>
+          <article class="project">
+            <div class="project-art"><div class="art-label">Canva · Design</div><div class="art-title">Clean visuals. Clear message.</div></div>
+            <div class="project-body"><div class="small">Project 03</div><h3>Canva Social Graphics</h3><p>On-brand layouts for tips, announcements, service highlights, and inspirational content.</p><p class="placeholder" style="margin-top:12px;">Replace this with a screenshot of your design.</p><a class="project-link" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">View design tools ↗</a></div>
+          </article>
+          <article class="project">
+            <div class="project-art"><div class="art-label">Organization · Admin</div><div class="art-title">Keeping the moving parts in order.</div></div>
+            <div class="project-body"><div class="small">Project 04</div><h3>Workflow & Task Tracking</h3><p>Organized checklists and spreadsheets to help teams track work and know what needs attention.</p><p class="placeholder" style="margin-top:12px;">Replace this with a sample template with private details removed.</p><a class="project-link" href="https://docs.google.com/document/" target="_blank" rel="noopener noreferrer">View sample document ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">My workflow</div>
+          <h2 class="section-title">Simple, clear, and organized.</h2>
+        </div>
+        <div class="process">
+          <div class="step"><div class="num">STEP 01</div><h3>Understand</h3><p>I clarify your goals, audience, tools, and preferred process.</p></div>
+          <div class="step"><div class="num">STEP 02</div><h3>Organize</h3><p>I create a clear plan, checklist, or tracker for the work.</p></div>
+          <div class="step"><div class="num">STEP 03</div><h3>Deliver</h3><p>I complete agreed tasks carefully and request approval when needed.</p></div>
+          <div class="step"><div class="num">STEP 04</div><h3>Improve</h3><p>I share updates, track progress, and use feedback to improve.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="eyebrow">Let's work together</div>
+            <h2>Need a reliable extra hand?</h2>
+            <p>I'd love to learn about your business and the tasks you would like support with. Send me a message and let's start a conversation.</p>
+            <p class="placeholder">Replace the email below with your professional email address before publishing.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn" href="mailto:YOUR.EMAIL@example.com?subject=Virtual%20Assistant%20Inquiry">Email Me ↗</a>
+            <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year"></span> Jinky Buarao · Virtual Assistant Portfolio</span>
+    <span>Made with care · <a href="#home">Back to top ↑</a></span>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
